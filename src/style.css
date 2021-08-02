@@ -8,21 +8,23 @@ h6 {
 }
 h1 {
   padding-top: 50px;
-  padding-bottom: 35px;
 }
+
 p,
 div,
 span {
   font-family: "Oxygen", sans-serif;
+  font-size: 14px;
 }
 
 .iconHeading {
   font-size: 200px;
   padding-bottom: 35px;
+  text-align: center;
 }
 .currentTemp {
+  font-size: 150px;
   text-align: center;
-  font-size: 100px;
 }
 .weatherDetails {
   list-style-type: none;
@@ -32,23 +34,30 @@ span {
 .details {
   padding-left: 50px;
 }
-.informationHeading {
-  list-style-type: none;
-  margin: 0 auto;
-  padding-left: 0;
+.dateCity {
+  padding-bottom: 50px;
+}
+.currentIcon {
+  color: rgb(218, 237, 253);
+  font-size: 18px;
 }
 
-.searchbar {
-  display: inline;
-  padding-left: 15px;
+.codedBy {
+  margin-left: 40px;
+
+  color: rgb(218, 237, 253);
+
+  font-size: 10px;
 }
 .forecast {
   padding-top: 50px;
   padding-bottom: 15px;
+  margin-left: 40px;
+  color: rgb(218, 237, 253);
 }
 .rightSection {
   padding-top: 50px;
-  background-color: blueviolet;
+  background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 
   padding-bottom: 100px;
 }
@@ -56,4 +65,55 @@ span {
   font-size: 50px;
   padding-top: 8px;
   padding-bottom: 15px;
+}
+.addPadding {
+  padding-left: 20px;
+}
+.card {
+  margin-left: 40px;
+}
+.searchbar {
+  color: #1b5b7e;
+  padding: 5px 0px 5px 15px;
+  border-radius: 6px;
+  display: inline;
+}
+.searchButton {
+  background-color: #1b5b7e;
+  color: rgb(218, 237, 253);
+  border-radius: 6px;
+  padding: 5px 15px 5px 15px;
+  border-color: #1b5b7e;
+}
+
+.celsiusIcon {
+  background-color: rgb(218, 237, 253);
+  color: #1b5b7e;
+  border-radius: 100px;
+  padding: 10px 10px 10px 10px;
+  margin-left: 40px;
+  border-color: #1b5b7e;
+}
+.fahrenheitIcon {
+  background-color: rgb(218, 237, 253);
+  color: #1b5b7e;
+  border-radius: 100px;
+  padding: 10px 10px 10px 10px;
+  border-color: #1b5b7e;
+}
+
+.border {
+  margin-top: 50px;
+  padding: 0px 40px 0px 20px;
+}
+.container {
+  margin-top: 50px;
+}
+.celsiusIcon:hover {
+  cursor: pointer;
+  background-color: #b6e0dd;
+}
+.fahrenheitIcon:hover {
+  cursor: pointer;
+  background-color: #b6e0dd;
 }

@@ -28,24 +28,16 @@
       <div class="row">
         <div class="col-sm-3" class="container-lg">
           <h1 class="cityHeading">City Name</h1>
+          <div class="dateCity">Monday, 3:00pm</div>
           <i class="fas fa-cloud-sun-rain iconHeading"></i>
           <h2 class="currentTemp">20°</h2>
-          <ul class="informationHeading">
-            <li>
-              <span class="feelsLikeTemp informationHeading"
-                >Feels like: 15°</span
-              >
-            </li>
-            <li>
-              <span class="dateSearched informationHeading">
-                Monday, 3:00pm</span
-              >
-            </li>
-          </ul>
 
           <hr />
           <h5>Weather Details</h5>
           <ul class="weatherDetails">
+            <li class="weatherDetails">
+              Feels Like: <span class="details" id="minTemp"> 19°</span>
+            </li>
             <li class="weatherDetails">
               Min Temp: <span class="details" id="minTemp"> 2°</span>
             </li>
@@ -64,18 +56,10 @@
         <div class="col-sm-9 rightSection">
           <div class="row">
             <div class="col-8 col-sm-6">
-              <button
-                type="button"
-                class="btn btn-light celFahrIcon"
-                id="celsiusIcon"
-              >
+              <button type="button" class="celsiusIcon" id="celsiusIcon">
                 °C
               </button>
-              <button
-                type="button"
-                class="btn btn-dark celFahrIcon"
-                id="fahrenheitIcon"
-              >
+              <button type="button" class="fahrenheitIcon" id="fahrenheitIcon">
                 °F
               </button>
             </div>
@@ -83,9 +67,10 @@
               <i class="fas fa-location-arrow currentIcon"></i>
               <form class="searchbar" id="city-search-form">
                 <input
+                  class="searchbar"
                   id="searchCity"
                   type="text"
-                  placeholder="Enter new city"
+                  placeholder="Enter City"
                 />
                 <input
                   class="searchButton"
@@ -95,11 +80,11 @@
                 />
               </form>
               <br />
-              <p>Monday, 9:00pm</p>
+              <p class="currentDate">Monday, 9:00pm</p>
             </div>
 
             <div class="col-8 col-sm-6">
-              <h5 class="forecast">Today's Hourly Forecast</h5>
+              <h5 class="forecast">Hourly Forecast</h5>
             </div>
             <div class="col-4 col-sm-6"></div>
             <div class="col-sm-2">
@@ -109,7 +94,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -120,7 +105,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -131,7 +116,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -142,7 +127,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -153,12 +138,12 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
             <div>
-              <h5 class="forecast">Forecast for the next 5 Days</h5>
+              <h5 class="forecast">5 Days Forecast</h5>
             </div>
             <div class="col-sm-2">
               <div class="card" style="width: 10rem">
@@ -167,7 +152,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -178,7 +163,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -189,7 +174,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -200,7 +185,7 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
@@ -211,11 +196,12 @@
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>
-                  <span id="hourlyWindSpeed">20 km/h</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
                 </div>
               </div>
             </div>
           </div>
+          <span class="codedBy"> Coded and designed by Rosy Cella</span>
         </div>
       </div>
     </div>

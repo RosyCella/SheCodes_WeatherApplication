@@ -5,19 +5,221 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/5d59604d85.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <h1>Weather App</h1>
-      <button type="button" class="btn btn-primary">Primary</button>
+      <div class="row">
+        <div class="col-sm-3" class="container-lg">
+          <h1 class="cityHeading">City Name</h1>
+          <i class="fas fa-cloud-sun-rain iconHeading"></i>
+          <h2 class="currentTemp">20°</h2>
+          <ul class="informationHeading">
+            <li>
+              <span class="feelsLikeTemp informationHeading"
+                >Feels like: 15°</span
+              >
+            </li>
+            <li>
+              <span class="dateSearched informationHeading">
+                Monday, 3:00pm</span
+              >
+            </li>
+          </ul>
+
+          <hr />
+          <h5>Weather Details</h5>
+          <ul class="weatherDetails">
+            <li class="weatherDetails">
+              Min Temp: <span class="details" id="minTemp"> 2°</span>
+            </li>
+            <li class="weatherDetails">
+              Max Temp:<span class="details" id="maxTemp"> 2°</span>
+            </li>
+            <li class="weatherDetails">
+              Wind Speed:<span class="details" id="windSpeed"> 2 km/h</span>
+            </li>
+            <li class="weatherDetails">
+              Humidity:<span class="details" id="humidity"> 20%</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 rightSection">
+          <div class="row">
+            <div class="col-8 col-sm-6">
+              <button
+                type="button"
+                class="btn btn-light celFahrIcon"
+                id="celsiusIcon"
+              >
+                °C
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark celFahrIcon"
+                id="fahrenheitIcon"
+              >
+                °F
+              </button>
+            </div>
+            <div class="col-4 col-sm-6 text-end">
+              <i class="fas fa-location-arrow currentIcon"></i>
+              <form class="searchbar" id="city-search-form">
+                <input
+                  id="searchCity"
+                  type="text"
+                  placeholder="Enter new city"
+                />
+                <input
+                  class="searchButton"
+                  id="submitCity"
+                  type="submit"
+                  value="Search"
+                />
+              </form>
+              <br />
+              <p>Monday, 9:00pm</p>
+            </div>
+
+            <div class="col-8 col-sm-6">
+              <h5 class="forecast">Today's Hourly Forecast</h5>
+            </div>
+            <div class="col-4 col-sm-6"></div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">2:00 pm</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">2:00 pm</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">2:00 pm</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">2:00 pm</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">2:00 pm</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h5 class="forecast">Forecast for the next 5 Days</h5>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Monday</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Tuesday</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Wednesday</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Thursday</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Friday</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <span id="hourlyWindSpeed">20 km/h</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="src/java.js"></script>
   </body>
 </html>

@@ -1,0 +1,59 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Ubuntu", sans-serif;
+}
+h1 {
+  padding-top: 50px;
+  padding-bottom: 35px;
+}
+p,
+div,
+span {
+  font-family: "Oxygen", sans-serif;
+}
+
+.iconHeading {
+  font-size: 200px;
+  padding-bottom: 35px;
+}
+.currentTemp {
+  text-align: center;
+  font-size: 100px;
+}
+.weatherDetails {
+  list-style-type: none;
+  margin: 0 auto;
+  padding-left: 0;
+}
+.details {
+  padding-left: 50px;
+}
+.informationHeading {
+  list-style-type: none;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.searchbar {
+  display: inline;
+  padding-left: 15px;
+}
+.forecast {
+  padding-top: 50px;
+  padding-bottom: 15px;
+}
+.rightSection {
+  padding-top: 50px;
+  background-color: blueviolet;
+
+  padding-bottom: 100px;
+}
+.iconForecast {
+  font-size: 50px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+}

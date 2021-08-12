@@ -16,7 +16,9 @@ span {
   font-family: "Oxygen", sans-serif;
   font-size: 14px;
 }
-
+h5{
+padding-bottom: 20px;
+}
 .iconHeading {
   font-size: 200px;
   padding-bottom: 35px;
@@ -30,9 +32,17 @@ span {
   list-style-type: none;
   margin: 0 auto;
   padding-left: 0;
+  margin-bottom: 25px;
 }
-.details {
+/* .details {
   padding-left: 50px;
+} */
+.detailsResults{
+text-align: right;
+padding-left: 50px;
+}
+.detailsResultsHumidity{
+  padding-left: 55px;
 }
 .dateCity {
   padding-bottom: 50px;
@@ -117,6 +127,7 @@ margin-left: 5px;
 .container {
   margin-top: 50px;
 }
+
 .celsiusIcon:hover {
   cursor: default;
   background-color: #1b5b7e;

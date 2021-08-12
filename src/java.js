@@ -125,6 +125,25 @@ celsiusElement.addEventListener("click", showCelsius)
 
 let celsiusTemp = null;
 
+function showPosition(position) {
+  console.log(position);
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "456a5de287faeb02ba871a9c7698e2c6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayCity);
+}
+
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let button = document.querySelector("#currentIcon");
+button.addEventListener("click", getCurrentPosition);
+
+
+
 
 
 search("Berlin");

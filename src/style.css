@@ -103,6 +103,11 @@ border-radius: 2px 20px 20px 2px;
   border-color: rgb(218, 237, 253);
 
 }
+.invisibleButton{
+ background-color: rgba(218, 237, 253, 0);
+  border-color: rgba(218, 237, 253, 0);
+
+}
 .searchButton {
   background-color: #1b5b7e;
   color: rgb(218, 237, 253);

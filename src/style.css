@@ -8,6 +8,7 @@ h6 {
 }
 h1 {
   padding-top: 50px;
+  margin-left: 20px;
 }
 
 p,
@@ -18,6 +19,7 @@ span {
 }
 h5{
 padding-bottom: 20px;
+margin-left: 20px;
 }
 .iconHeading {
   font-size: 200px;
@@ -33,6 +35,7 @@ padding-bottom: 20px;
   margin: 0 auto;
   padding-left: 0;
   margin-bottom: 25px;
+  margin-left: 20px;
 }
 /* .details {
   padding-left: 50px;
@@ -54,6 +57,7 @@ padding-left: 50px;
 .description {
   text-transform: capitalize;
   padding-bottom: 10px;
+  margin-left: 20px;
 }
 .codedBy {
   margin-left: 20px;
@@ -76,8 +80,9 @@ padding-left: 50px;
 .rightSection {
   padding-top: 50px;
   background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-
+border-radius: 2px 20px 20px 2px;
   padding-bottom: 100px;
+
 }
 .iconForecast {
   font-size: 50px;
@@ -95,6 +100,8 @@ padding-left: 50px;
   padding: 5px 0px 5px 15px;
   border-radius: 6px;
   display: inline;
+  border-color: rgb(218, 237, 253);
+
 }
 .searchButton {
   background-color: #1b5b7e;
@@ -102,8 +109,15 @@ padding-left: 50px;
   border-radius: 6px;
   padding: 5px 15px 5px 15px;
   border-color: #1b5b7e;
+    margin-right: 105px;
+    margin-left: 5px;
 }
-
+.currentDate{
+  margin-top: 5px;
+    margin-right: 105px;
+    color: rgb(218, 237, 253);
+    font-size: 14px;
+}
 .celsiusIcon {
   background-color: rgb(218, 237, 253);
   color: #1b5b7e;
@@ -131,7 +145,11 @@ margin-left: 5px;
 .container {
   margin-top: 50px;
 }
+.leftSection{
+  background-color: rgb(231, 231, 231);
+  border-radius: 20px;
 
+}
 .celsiusIcon:hover {
   cursor: default;
   background-color: #1b5b7e;

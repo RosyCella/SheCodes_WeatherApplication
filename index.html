@@ -25,13 +25,14 @@
     <title>Weather App</title>
   </head>
   <body>
+    
     <div class="container">
-      <div class="row">
+      <div class="row leftSection">
         <div class="col-sm-3" class="container-lg">
-          <h1 class="cityHeading">City Name</h1>
+          <h1 class="cityHeading"></h1>
           <div class="description"id="description"></div>
           <img src="https://cdn.icon-icons.com/icons2/1370/PNG/512/if-weather-3-2682848_90785.png" alt="Clear" width="200" id=iconHeading>
-          <h2 class="currentTemp" id="temp"> <span> °</span></h2>
+          <h2 class="currentTemp" id="temp"> <span> </span></h2>
 
           <hr />
           <h5>Weather Details</h5>
@@ -96,7 +97,7 @@
                 />
               </form>
               <br />
-              <p id="currentDate">Monday, 9:00pm</p>
+              <p id="currentDate" class="currentDate"></p>
             </div>
 
             <div class="col-8 col-sm-6">
@@ -106,7 +107,7 @@
             <div class="col-sm-2">
               <div class="card" style="width: 10rem">
                 <div class="card-body">
-                  <h6 class="card-subtitle mb-2 text-muted">2:00 pm</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">1:00 pm</h6>
                   <i class="fas fa-cloud-sun-rain iconForecast"></i>
                   <br />
                   <span>Wind Speed:</span>

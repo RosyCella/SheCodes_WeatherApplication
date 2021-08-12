@@ -20,7 +20,7 @@ span {
 .iconHeading {
   font-size: 200px;
   padding-bottom: 35px;
-  text-align: center;
+  text-align: right;
 }
 .currentTemp {
   font-size: 150px;
@@ -41,14 +41,18 @@ span {
   color: rgb(218, 237, 253);
   font-size: 18px;
 }
-
+.description {
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
 .codedBy {
-  margin-left: 40px;
+  margin-left: 20px;
 
   color: rgb(218, 237, 253);
-
+  text-decoration: none;
   font-size: 10px;
 }
+
 .forecast {
   padding-top: 50px;
   padding-bottom: 15px;
@@ -89,19 +93,23 @@ span {
 .celsiusIcon {
   background-color: rgb(218, 237, 253);
   color: #1b5b7e;
-  border-radius: 100px;
-  padding: 10px 10px 10px 10px;
+  border-radius: 6px;
+  padding: 5px 10px 5px 10px;
   margin-left: 40px;
-  border-color: #1b5b7e;
+  border-color: rgb(218, 237, 253);
 }
 .fahrenheitIcon {
   background-color: rgb(218, 237, 253);
   color: #1b5b7e;
-  border-radius: 100px;
-  padding: 10px 10px 10px 10px;
-  border-color: #1b5b7e;
+  border-radius: 6px;
+  padding: 5px 10px 5px 10px;
+margin-left: 5px;
+  border-color: rgb(218, 237, 253);
 }
-
+.active{
+ background-color: #1b5b7e;
+  color:  rgb(218, 237, 253);;
+}
 .border {
   margin-top: 50px;
   padding: 0px 40px 0px 20px;
@@ -110,10 +118,15 @@ span {
   margin-top: 50px;
 }
 .celsiusIcon:hover {
-  cursor: pointer;
-  background-color: #b6e0dd;
+  cursor: default;
+  background-color: #1b5b7e;
+  color:  rgb(218, 237, 253);;
 }
 .fahrenheitIcon:hover {
-  cursor: pointer;
-  background-color: #b6e0dd;
+  cursor: default;
+  background-color: #1b5b7e;
+  color:  rgb(218, 237, 253);;
+}
+.codedBy:hover {
+  color: #b6e0dd;
 }

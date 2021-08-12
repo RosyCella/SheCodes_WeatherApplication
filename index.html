@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Oxygen&family=Ubuntu:wght@300;400;500;700&display=swap"
       rel="stylesheet"
@@ -28,40 +29,55 @@
       <div class="row">
         <div class="col-sm-3" class="container-lg">
           <h1 class="cityHeading">City Name</h1>
-          <div class="dateCity">Monday, 3:00pm</div>
-          <i class="fas fa-cloud-sun-rain iconHeading"></i>
-          <h2 class="currentTemp">20°</h2>
+          <div class="description"id="description"></div>
+          <img src="https://cdn.icon-icons.com/icons2/1370/PNG/512/if-weather-3-2682848_90785.png" alt="Clear" width="200" id=iconHeading>
+          <h2 class="currentTemp" id="temp"> <span> °</span></h2>
 
           <hr />
           <h5>Weather Details</h5>
           <ul class="weatherDetails">
             <li class="weatherDetails">
-              Feels Like: <span class="details" id="minTemp"> 19°</span>
+              Feels Like: <span class="details" id="feelsLike"></span> <span> °</span>
             </li>
             <li class="weatherDetails">
-              Min Temp: <span class="details" id="minTemp"> 2°</span>
+              Min Temp: <span class="details" id="minTemp"> </span><span> °</span>
             </li>
             <li class="weatherDetails">
-              Max Temp:<span class="details" id="maxTemp"> 2°</span>
+              Max Temp:<span class="details" id="maxTemp"> </span><span> °</span>
             </li>
-            <li class="weatherDetails">
-              Wind Speed:<span class="details" id="windSpeed"> 2 km/h</span>
+                       <li class="weatherDetails">
+              Humidity:<span class="details" id="humidity"></span> <span> °</span>
             </li>
-            <li class="weatherDetails">
-              Humidity:<span class="details" id="humidity"> 20%</span>
+             <!-- <li class="weatherDetails"> -->
+              <!-- Wind Speed:<span class="details" id="windSpeed"> </span> <span> km/h</span>
             </li>
+             <li class="weatherDetails">
+              Sunrise:<span class="details" id="sunrise"> </span> 
+                        </li>
+                        <li class="weatherDetails">
+              Sunset:<span class="details" id="sunset"> </span> 
+                        </li> -->
           </ul>
         </div>
 
         <div class="col-sm-9 rightSection">
           <div class="row">
             <div class="col-8 col-sm-6">
-              <button type="button" class="celsiusIcon" id="celsiusIcon">
+              <button
+                type="button"
+                class="celsiusIcon active"
+                id="celsiusIcon"
+              >
                 °C
               </button>
-              <button type="button" class="fahrenheitIcon" id="fahrenheitIcon">
+              <button
+                type="button"
+                class="fahrenheitIcon"
+                id="fahrenheitIcon"
+              >
                 °F
               </button>
+            
             </div>
             <div class="col-4 col-sm-6 text-end">
               <i class="fas fa-location-arrow currentIcon"></i>
@@ -69,7 +85,7 @@
                 <input
                   class="searchbar"
                   id="searchCity"
-                  type="text"
+                  type="search"
                   placeholder="Enter City"
                 />
                 <input
@@ -80,7 +96,7 @@
                 />
               </form>
               <br />
-              <p class="currentDate">Monday, 9:00pm</p>
+              <p id="currentDate">Monday, 9:00pm</p>
             </div>
 
             <div class="col-8 col-sm-6">
@@ -201,7 +217,7 @@
               </div>
             </div>
           </div>
-          <span class="codedBy"> Coded and designed by Rosy Cella</span>
+          <small class="codedBy"> <a href=" " class="codedBy">  Open-source code</a> by Rosy Cella</span>
         </div>
       </div>
     </div>

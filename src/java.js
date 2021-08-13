@@ -52,10 +52,11 @@ function displayCity(response) {
   humidity.innerHTML = response.data.main.humidity;
 
   celsiusTemp = response.data.main.temp;
-
-  // let iconElement = document.querySelector("#iconHeading");
-  // iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-  
+  let iconElement = document.querySelector("#iconHeading");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   //   let windSpeed = document.querySelector("#windSpeed");
   //   windSpeed.innerHTML = response.data.wind.speed;
@@ -83,37 +84,35 @@ function displayCity(response) {
 // console.log(apiUrlLocation)
 
 function search(city) {
-apiKey = "456a5de287faeb02ba871a9c7698e2c6";
-unit = "metric";
-apiUrlDay = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
-axios.get(apiUrlDay).then(displayCity);
+  apiKey = "456a5de287faeb02ba871a9c7698e2c6";
+  unit = "metric";
+  apiUrlDay = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrlDay).then(displayCity);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#searchCity");
-  search(cityElement.value)
-  
+  search(cityElement.value);
 }
 
 let form = document.querySelector("searchbar");
 addEventListener("submit", handleSubmit);
 
-function showCelsius(event){
+function showCelsius(event) {
   event.preventDefault();
-  let tempElement = document.querySelector ("#temp");
+  let tempElement = document.querySelector("#temp");
   tempElement.innerHTML = Math.round(celsiusTemp);
   celsiusElement.classList.add("active");
   fahrenheitElement.classList.remove("active");
 }
 
-
-function showFahrenheit(event){
+function showFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
 
-  let tempElement = document.querySelector ("#temp");
-  tempElement.innerHTML = Math.round(fahrenheitTemp)
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
   celsiusElement.classList.remove("active");
   fahrenheitElement.classList.add("active");
 }
@@ -121,7 +120,7 @@ let fahrenheitElement = document.querySelector("#fahrenheitIcon");
 fahrenheitElement.addEventListener("click", showFahrenheit);
 
 let celsiusElement = document.querySelector("#celsiusIcon");
-celsiusElement.addEventListener("click", showCelsius)
+celsiusElement.addEventListener("click", showCelsius);
 
 let celsiusTemp = null;
 
@@ -141,9 +140,5 @@ function getCurrentPosition() {
 
 let button = document.querySelector("#currentIcon");
 button.addEventListener("click", getCurrentPosition);
-
-
-
-
 
 search("Berlin");

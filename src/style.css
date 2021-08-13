@@ -17,9 +17,9 @@ span {
   font-family: "Oxygen", sans-serif;
   font-size: 14px;
 }
-h5{
-padding-bottom: 20px;
-margin-left: 20px;
+h5 {
+  padding-bottom: 20px;
+  margin-left: 20px;
 }
 .iconHeading {
   font-size: 200px;
@@ -40,11 +40,11 @@ margin-left: 20px;
 /* .details {
   padding-left: 50px;
 } */
-.detailsResults{
-text-align: right;
-padding-left: 50px;
+.detailsResults {
+  text-align: right;
+  padding-left: 50px;
 }
-.detailsResultsHumidity{
+.detailsResultsHumidity {
   padding-left: 55px;
 }
 .dateCity {
@@ -66,7 +66,7 @@ padding-left: 50px;
   text-decoration: none;
   font-size: 10px;
 }
-.codedByRosy{
+.codedByRosy {
   color: rgb(218, 237, 253);
   text-decoration: none;
   font-size: 10px;
@@ -80,9 +80,8 @@ padding-left: 50px;
 .rightSection {
   padding-top: 50px;
   background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-border-radius: 2px 20px 20px 2px;
+  border-radius: 2px 20px 20px 2px;
   padding-bottom: 100px;
-
 }
 .iconForecast {
   font-size: 50px;
@@ -101,12 +100,13 @@ border-radius: 2px 20px 20px 2px;
   border-radius: 6px;
   display: inline;
   border-color: rgb(218, 237, 253);
-
 }
-.invisibleButton{
- background-color: rgba(218, 237, 253, 0);
+.bigIcon {
+  margin-left: 20px;
+}
+.invisibleButton {
+  background-color: rgba(218, 237, 253, 0);
   border-color: rgba(218, 237, 253, 0);
-
 }
 .searchButton {
   background-color: #1b5b7e;
@@ -114,14 +114,14 @@ border-radius: 2px 20px 20px 2px;
   border-radius: 6px;
   padding: 5px 15px 5px 15px;
   border-color: #1b5b7e;
-    margin-right: 105px;
-    margin-left: 5px;
+  margin-right: 105px;
+  margin-left: 5px;
 }
-.currentDate{
+.currentDate {
   margin-top: 5px;
-    margin-right: 105px;
-    color: rgb(218, 237, 253);
-    font-size: 14px;
+  margin-right: 105px;
+  color: rgb(218, 237, 253);
+  font-size: 14px;
 }
 .celsiusIcon {
   background-color: rgb(218, 237, 253);
@@ -136,12 +136,12 @@ border-radius: 2px 20px 20px 2px;
   color: #1b5b7e;
   border-radius: 6px;
   padding: 5px 10px 5px 10px;
-margin-left: 5px;
+  margin-left: 5px;
   border-color: rgb(218, 237, 253);
 }
-.active{
- background-color: #1b5b7e;
-  color:  rgb(218, 237, 253);;
+.active {
+  background-color: #1b5b7e;
+  color: rgb(218, 237, 253);
 }
 .border {
   margin-top: 50px;
@@ -150,20 +150,19 @@ margin-left: 5px;
 .container {
   margin-top: 50px;
 }
-.leftSection{
+.leftSection {
   background-color: rgb(231, 231, 231);
   border-radius: 20px;
-
 }
 .celsiusIcon:hover {
   cursor: default;
   background-color: #1b5b7e;
-  color:  rgb(218, 237, 253);;
+  color: rgb(218, 237, 253);
 }
 .fahrenheitIcon:hover {
   cursor: default;
   background-color: #1b5b7e;
-  color:  rgb(218, 237, 253);;
+  color: rgb(218, 237, 253);
 }
 .codedBy:hover {
   color: #b6e0dd;

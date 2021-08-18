@@ -57,31 +57,63 @@ function displayCity(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  //   let windSpeed = document.querySelector("#windSpeed");
-  //   windSpeed.innerHTML = response.data.wind.speed;
+  getForecast(response.data.coord);
 }
 
-// function defaultCity(city) {
-//   apiKey = "456a5de287faeb02ba871a9c7698e2c6";
-//   cityName = "Winterthur";
-//   unit = "metric";
-//   apiUrlDay = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
-//   axios.get(apiUrl).then(displayCity);
-// }
+function getForecast(coordinates) {
+  apiKey = "456a5de287faeb02ba871a9c7698e2c6";
+  unit = "metric";
+  apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrlForecast).then(displayForecast);
+  axios.get(apiUrlForecast).then(displayForecastHourly);
+}
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecastdays");
 
-// function displayCity(response) {
-//   console.log(response.data.name);
-// }
+  let forecastHTML = `<div class="row"> `;
+  let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-sm-2">
+       <div class="card" style="width: 10rem">
+       <div class="card-body">
+       <h6 class="card-subtitle mb-2 text-muted dateForecast">${day}</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                 <span class="minForecast">2° </span> <span class="maxForecast"> 15°</span>
+             </div>    
+    </div> </div>`;
+  });
 
-//  -----------URL for current Location
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
-// apiKey = "456a5de287faeb02ba871a9c7698e2c6";
-// lat = position.coords.latitude;
-// long = position.coords.latitude;
-// unit = "metric";
-// apiUrlLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-// console.log(apiUrlLocation)
+function displayForecastHourly() {
+  let forecastElement = document.querySelector("#forecasthourly");
+
+  let forecastHTML = `<div class="row"> `;
+  let days = ["12:00pm", "2:00pm", "4:00pm", "6:00pm", "8:00pm"];
+  days.forEach(function (hour) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm-2">
+           <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">${hour}</h6>
+                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <br />
+                  <span>Wind Speed:</span>
+                  <div id="hourlyWindSpeed">20 km/h</div>
+                </div>
+              </div></div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function search(city) {
   apiKey = "456a5de287faeb02ba871a9c7698e2c6";
@@ -142,3 +174,5 @@ let button = document.querySelector("#currentIcon");
 button.addEventListener("click", getCurrentPosition);
 
 search("Berlin");
+
+// forecast 5 days

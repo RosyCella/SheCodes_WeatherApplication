@@ -60,6 +60,32 @@ function displayCity(response) {
   getForecast(response.data.coord);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
+function formatHour(timestamp) {
+  let date = new Date(timestamp * 1000);
+
+  let minutes =
+    now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+  let hours = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
+  let amPm = now.getHours() >= 12 ? "pm" : "am";
+  let time = `${hours}:${minutes}${amPm}`;
+  return time;
+}
+
 function getForecast(coordinates) {
   apiKey = "456a5de287faeb02ba871a9c7698e2c6";
   unit = "metric";
@@ -67,48 +93,68 @@ function getForecast(coordinates) {
   axios.get(apiUrlForecast).then(displayForecast);
   axios.get(apiUrlForecast).then(displayForecastHourly);
 }
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecastdays");
 
   let forecastHTML = `<div class="row"> `;
-  let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-sm-2">
        <div class="card" style="width: 10rem">
        <div class="card-body">
-       <h6 class="card-subtitle mb-2 text-muted dateForecast">${day}</h6>
-                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+       <h6 class="card-subtitle mb-2 text-muted dateForecast">${formatDay(
+         forecastDay.dt
+       )}</h6>
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt="Clear" width="80"/>
                   <br />
-                 <span class="minForecast">2° </span> <span class="maxForecast"> 15°</span>
+                 <span class="minForecast"> ${Math.round(
+                   forecastDay.temp.min
+                 )}° </span> <span class="maxForecast"> ${Math.round(
+          forecastDay.temp.max
+        )}°</span>
              </div>    
     </div> </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
-function displayForecastHourly() {
+function displayForecastHourly(response) {
+  console.log(response.data.hourly);
+  let forecastHourly = response.data.hourly;
   let forecastElement = document.querySelector("#forecasthourly");
 
   let forecastHTML = `<div class="row"> `;
-  let days = ["12:00pm", "2:00pm", "4:00pm", "6:00pm", "8:00pm"];
-  days.forEach(function (hour) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm-2">
+
+  forecastHourly.forEach(function (forecastHour, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm-2">
            <div class="card" style="width: 10rem">
                 <div class="card-body">
-                  <h6 class="card-subtitle mb-2 text-muted">${hour}</h6>
-                  <i class="fas fa-cloud-sun-rain iconForecast"></i>
+                  <h6 class="card-subtitle mb-2 text-muted">${formatHour(
+                    forecastHour.dt
+                  )}</h6>
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastHour.weather[0].icon
+                }@2x.png" alt="Clear" width="80"/>
                   <br />
-                  <span>Wind Speed:</span>
-                  <div id="hourlyWindSpeed">20 km/h</div>
+                         <span class="minForecast"> ${Math.round(
+                           forecastHour.temp
+                         )}° </span> 
                 </div>
               </div></div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

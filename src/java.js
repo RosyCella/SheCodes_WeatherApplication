@@ -30,12 +30,10 @@ let hours = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
 let amPm = now.getHours() >= 12 ? "pm" : "am";
 let currentTime = document.querySelector("#currentDate");
 currentTime.innerHTML = `${day}, ${date} ${month}, ${hours}:${minutes} ${amPm} `;
-console.log(currentTime);
 
 // -----------URL for Search City
 
 function displayCity(response) {
-  console.log(response.data);
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   let currentTemp = document.querySelector("h2");
@@ -79,9 +77,10 @@ function formatHour(timestamp) {
   let date = new Date(timestamp * 1000);
 
   let minutes =
-    now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
-  let hours = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
-  let amPm = now.getHours() >= 12 ? "pm" : "am";
+    date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+  let hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+
+  let amPm = date.getHours() >= 12 ? "pm" : "am";
   let time = `${hours}:${minutes}${amPm}`;
   return time;
 }
@@ -100,7 +99,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row"> `;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index !== 0 && index <= 5) {
       forecastHTML =
         forecastHTML +
         `
@@ -136,7 +135,8 @@ function displayForecastHourly(response) {
   let forecastHTML = `<div class="row"> `;
 
   forecastHourly.forEach(function (forecastHour, index) {
-    if (index < 5) {
+    if (index < 12 && index !== 0 && index % 2 === 0) {
+      console.log(index);
       forecastHTML =
         forecastHTML +
         `<div class="col-sm-2">
@@ -203,12 +203,11 @@ celsiusElement.addEventListener("click", showCelsius);
 let celsiusTemp = null;
 
 function showPosition(position) {
-  console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "456a5de287faeb02ba871a9c7698e2c6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayCity);
 }
 
@@ -219,6 +218,4 @@ function getCurrentPosition() {
 let button = document.querySelector("#currentIcon");
 button.addEventListener("click", getCurrentPosition);
 
-search("Berlin");
-
-// forecast 5 days
+search("St Kilda");

@@ -181,21 +181,7 @@ function showCelsius(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp");
   tempElement.innerHTML = Math.round(celsiusTemp);
-  celsiusElement.classList.add("active");
-  fahrenheitElement.classList.remove("active");
 }
-
-function showFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-  celsiusElement.classList.remove("active");
-  fahrenheitElement.classList.add("active");
-}
-let fahrenheitElement = document.querySelector("#fahrenheitIcon");
-fahrenheitElement.addEventListener("click", showFahrenheit);
 
 let celsiusElement = document.querySelector("#celsiusIcon");
 celsiusElement.addEventListener("click", showCelsius);

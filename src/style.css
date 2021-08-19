@@ -119,6 +119,7 @@ h5 {
   border-color: #1b5b7e;
   margin-right: 105px;
   margin-left: 5px;
+  border-color: #1b5b7e;
 }
 .currentDate {
   margin-top: 5px;
@@ -127,25 +128,15 @@ h5 {
   font-size: 14px;
 }
 .celsiusIcon {
-  background-color: rgb(218, 237, 253);
-  color: #1b5b7e;
+  background-color: #1b5b7e;
+  color: rgb(218, 237, 253);
   border-radius: 6px;
   padding: 5px 10px 5px 10px;
   margin-left: 40px;
   border-color: rgb(218, 237, 253);
+  margin-right: 392px;
 }
-.fahrenheitIcon {
-  background-color: rgb(218, 237, 253);
-  color: #1b5b7e;
-  border-radius: 6px;
-  padding: 5px 10px 5px 10px;
-  margin-left: 5px;
-  border-color: rgb(218, 237, 253);
-}
-.active {
-  background-color: #1b5b7e;
-  color: rgb(218, 237, 253);
-}
+
 .border {
   margin-top: 50px;
   padding: 0px 40px 0px 20px;
@@ -157,16 +148,7 @@ h5 {
   background-color: rgb(231, 231, 231);
   border-radius: 20px;
 }
-.celsiusIcon:hover {
-  cursor: default;
-  background-color: #1b5b7e;
-  color: rgb(218, 237, 253);
-}
-.fahrenheitIcon:hover {
-  cursor: default;
-  background-color: #1b5b7e;
-  color: rgb(218, 237, 253);
-}
+
 .codedBy:hover {
   color: #b6e0dd;
 }
